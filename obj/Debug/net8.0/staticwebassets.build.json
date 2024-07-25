@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "j/0t2V3jV6e15wvvzcAFCjDq8lBgk6o1ltWGyBX6gkk=",
+  "Source": "DiagnPortal.API",
+  "BasePath": "_content/DiagnPortal.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\g.vanos\\source\\repos\\DiagnPortal\\DiagnPortal\\diagnportal.client\\DiagnPortal.Client.esproj",
+      "Version": 2,
+      "Source": "DiagnPortal.Client",
+      "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,7 @@
+C:\Users\g.vanos\source\repos\DiagnPortal\DiagnPortal\DiagnPortal.Server\obj\Release\net8.0\win-x64\PubTmp\Out\appsettings.Development.json
+C:\Users\g.vanos\source\repos\DiagnPortal\DiagnPortal\DiagnPortal.Server\obj\Release\net8.0\win-x64\PubTmp\Out\appsettings.json
+C:\Users\g.vanos\source\repos\DiagnPortal\DiagnPortal\DiagnPortal.Server\obj\Release\net8.0\win-x64\PubTmp\Out\DiagnPortal.API.pdb
+C:\Users\g.vanos\source\repos\DiagnPortal\DiagnPortal\DiagnPortal.Server\obj\Release\net8.0\win-x64\PubTmp\Out\loggerSettings.json
+C:\Users\g.vanos\source\repos\DiagnPortal\DiagnPortal\DiagnPortal.Server\obj\Release\net8.0\win-x64\PubTmp\Out\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\g.vanos\source\repos\DiagnPortal\DiagnPortal\DiagnPortal.Server\obj\Release\net8.0\win-x64\PubTmp\Out\DD.Shared.pdb
+C:\Users\g.vanos\source\repos\DiagnPortal\DiagnPortal\DiagnPortal.Server\obj\Release\net8.0\win-x64\PubTmp\Out\DiagnPortal.API.exe
