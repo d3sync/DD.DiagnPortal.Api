@@ -1,0 +1,20 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/bin/Debug/net8.0/appsettings.json
+/bin/Debug/net8.0/DiagnPortal.API.dll
+/bin/Debug/net8.0/DiagnPortal.API.exe
+/bin/Debug/net8.0/DiagnPortal.API.pdb
+/bin/Debug/net8.0/spa.proxy.json
+/obj/Debug/net8.0/ref/DiagnPortal.API.dll
+/obj/Debug/net8.0/refint/DiagnPortal.API.dll
+/obj/Debug/net8.0/apphost.exe
+/obj/Debug/net8.0/DiagnPortal.API.AssemblyInfo.cs
+/obj/Debug/net8.0/DiagnPortal.API.AssemblyInfoInputs.cache
+/obj/Debug/net8.0/DiagnPortal.API.csproj.FileListAbsolute.txt
+/obj/Debug/net8.0/DiagnPortal.API.dll
+/obj/Debug/net8.0/DiagnPortal.API.pdb
+/obj/Debug/net8.0/DiagnPortal.API.sourcelink.json
+/obj/Debug/net8.0/spa.proxy.json
+/obj/Debug/net8.0/staticwebassets.build.json
