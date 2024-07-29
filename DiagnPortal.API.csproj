@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <SpaRoot>..\diagnportal.client</SpaRoot>
+    <SpaRoot>..\UI.WebClient</SpaRoot>
     <SpaProxyLaunchCommand>npm start</SpaProxyLaunchCommand>
     <SpaProxyServerUrl>https://localhost:4200</SpaProxyServerUrl>
   </PropertyGroup>
@@ -25,7 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\DD.Shared\DD.Shared\DD.Shared.csproj" />
-    <ProjectReference Include="..\diagnportal.client\DiagnPortal2.Client.esproj">
+    <ProjectReference Include="..\UI.WebClient\UI.WebClient.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
   </ItemGroup>
