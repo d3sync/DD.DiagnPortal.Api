@@ -31,7 +31,8 @@ builder.Services.AddCors(options =>
         {
             options.AddPolicy("CorsPolicy",
                 b => b
-                    .WithOrigins(builder.Configuration["FrontEndUrl"])
+                    .WithOrigins("http://localhost:4200","https://localhost:4200","http://127.0.0.1:4200",builder.Configuration["FrontEndUrl"])
+                    //.AllowAnyOrigin()
                     .AllowAnyMethod()
                     .AllowAnyHeader()
                     .AllowCredentials());
@@ -103,6 +104,7 @@ builder.Services.AddCors(options =>
         app.UseCors("CorsPolicy");
 
         app.UseAuthorization();
+
         app.MapGet("/claims", (ClaimsPrincipal user) =>
         {
             var claims = user.Claims.Select(c => new { c.Type, c.Value });
