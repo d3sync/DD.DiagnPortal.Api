@@ -61,6 +61,22 @@ retData = await PatientDataAccess.GetVisitsByPatcodeAsList(_context, patcode, nu
             return Ok(new { status ="success", data = retData});
         return NoContent();
     }
+    [HttpGet("lastvisitsbyaffiliate/{take?}")]
+    public async Task<IActionResult> GetVisitsByAffiliateLast(int? take)
+    {
+        if (take is <= 0 or null)
+            take = 20;
+        var errorResult = AffiliateHelper.GetParapCode(User, out int dCode);
+        
+        if (errorResult != null)
+        {
+            return errorResult;
+        }
+        var retData = await PatientDataAccess.GetVisitsByAffiliateLastAsList(_context,dCode, (int)take);
+        if (retData.Count > 0)
+            return Ok(new { status ="success", data = retData});
+        return NoContent();
+    }
     //GET PATVISITSbyUSERMAIL -- ENDPOINT -- RETURNS a list of PATVISITDTO
     [HttpGet("visitsbypatcode/{fromDate}/{toDate?}")]
     public async Task<IActionResult> GetVisitsByPatcode(DateTime fromDate, DateTime? toDate)

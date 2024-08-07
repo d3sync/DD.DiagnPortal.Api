@@ -1,4 +1,5 @@
-﻿using DD.Shared.DTOs;
+﻿using System.Dynamic;
+using DD.Shared.DTOs;
 using DD.Shared.Models;
 using DiagnPortal.API.Data;
 using Microsoft.Data.SqlClient;
@@ -131,6 +132,29 @@ namespace DiagnPortal.API.Patient
 
             var data = await context.Set<PatexetResult>().FromSqlRaw(sqlQuery, param.ToArray()).ToListAsync();
             return data;
+        }
+
+        public static async Task<List<ExpandoObject>> GetVisitsByAffiliateLastAsList(ReadDbContext context, int dcode, int take)
+        {
+            return await context.PATVISIT.AsNoTracking()
+                .Where(x => x.PARAP1 == dcode)
+                .OrderByDescending(x => x.PATDATE)
+                .Select(x => new
+                {
+                    x.PATCODE,
+                    x.PATDATE,
+                    x.PATTIME
+                })
+                .Take(take)
+                .ToListAsync()
+                .ContinueWith(t => t.Result.Select(item =>
+                {
+                    dynamic expando = new ExpandoObject();
+                    expando.PATCODE = item.PATCODE;
+                    expando.PATDATE = item.PATDATE;
+                    expando.PATTIME = item.PATTIME;
+                    return (ExpandoObject)expando;
+                }).ToList());
         }
     }
 }
