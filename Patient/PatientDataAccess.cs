@@ -141,6 +141,7 @@ namespace DiagnPortal.API.Patient
                 .OrderByDescending(x => x.PATDATE)
                 .Select(x => new
                 {
+                    Pat1file = x.PATCODENavigation.ToDTO(),
                     x.PATCODE,
                     x.PATDATE,
                     x.PATTIME
@@ -150,6 +151,7 @@ namespace DiagnPortal.API.Patient
                 .ContinueWith(t => t.Result.Select(item =>
                 {
                     dynamic expando = new ExpandoObject();
+                    expando.PATNAME = $"{item.Pat1file.PATFIRST} {item.Pat1file.PATLAST}";
                     expando.PATCODE = item.PATCODE;
                     expando.PATDATE = item.PATDATE;
                     expando.PATTIME = item.PATTIME;
