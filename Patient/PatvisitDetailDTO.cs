@@ -5,8 +5,12 @@ namespace DiagnPortal.API.Patient
 {
     public class PatvisitDetailDTO
     {
-        public Pat1fileDTO? Pat1file => Patvisits.Any() ? Patvisits.First().Pat1file : null;
+        public Pat1fileDTO? Pat1file
+        {
+            get;
+            set;
+        }
         public IEnumerable<PatvisitDTO> Patvisits { get; set; }
-        public List<PatexetResult>? Patexes { get; set; }
+        public ExaminationDisplayModel? Patexes { get; set; }
     }
 }

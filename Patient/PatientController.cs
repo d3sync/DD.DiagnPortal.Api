@@ -5,6 +5,7 @@ using DiagnPortal.API.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -96,10 +97,11 @@ retData = await PatientDataAccess.GetVisitsByPatcodeAsList(_context, patcode, nu
     [HttpGet("visit/{patcode}/{patdate}/{pattime?}")]
     public async Task<IActionResult> GetVisitPatcodePatdatePattime(long patcode, DateTime patdate, DateTime? pattime)
     {
-        Func<PATVISIT, bool> predicate = patvisit => patvisit.PATCODE == patcode && patvisit.PATDATE == patdate;
+        Expression<Func<PATVISIT, bool>> predicate = patvisit => patvisit.PATCODE == patcode && patvisit.PATDATE == patdate;
         if (pattime.HasValue)
             predicate = patvisit => patvisit.PATCODE == patcode && patvisit.PATDATE == patdate && patvisit.PATTIME == pattime;
 
+        var pat1file = await PatientDataAccess.GetPat1file(_context, patcode);
         var visitData = await PatientDataAccess.GetVisitDataList(_context, predicate);
         var exams = await PatientDataAccess.GetVisitExamsList(_context, patcode, patdate, pattime);
 
@@ -110,7 +112,10 @@ retData = await PatientDataAccess.GetVisitsByPatcodeAsList(_context, patcode, nu
                 status = "success",
                 data = new PatvisitDetailDTO
                 {
-                    Patvisits = _censorService.Censor(visitData.Select(x => x.ToDTO()), User),
+                    //Pat1file = _censorService.Censor(pat1file.ToDTO(), User),
+                    //Patvisits = _censorService.Censor(visitData.Select(x => x.ToDTO()), User),
+                    Pat1file = pat1file.ToDTO(),
+                    Patvisits = visitData.Select(x => x.ToDTO()),
                     Patexes = exams
                 }
             }

@@ -1,4 +1,5 @@
 ﻿using DD.Shared.DataAccess;
+using DD.Shared.DTOs;
 using Microsoft.EntityFrameworkCore;
 
 namespace DiagnPortal.API.Data
@@ -20,6 +21,12 @@ namespace DiagnPortal.API.Data
                     properties => properties.EnableRetryOnFailure());
             }
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<PatexetResult>()
+                .HasNoKey();
+        }
+        public DbSet<PatexetResult> PatexetResults { get; set; }
         // Override SaveChanges to prevent write operations
         public override int SaveChanges()
         {

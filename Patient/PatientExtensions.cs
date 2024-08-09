@@ -56,7 +56,7 @@ public static class PatientExtensions
     public static PatvisitDTO ToDTO(this PATVISIT x) =>
         new()
         {
-            Pat1file = x.PATCODENavigation.ToDTO(),
+            //Pat1file = x.PATCODENavigation.ToDTO(),
             PATCODE = x.PATCODE,
             PATDATE = x.PATDATE,
             PATTIME = x.PATTIME,

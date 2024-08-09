@@ -6,7 +6,7 @@ namespace DiagnPortal.API.Patient;
 
 public class PatvisitDTO
 {
-    public virtual Pat1fileDTO? Pat1file { get; set; }
+    public virtual Pat1fileDTO? Pat1file { get; set; } 
     public long PATCODE { get; set; }
 
     [Column(TypeName = "datetime")] public DateTime PATDATE { get; set; }
